@@ -1,1 +1,15 @@
 <h1> <%= @user.name %> </h1>
+<% if @user.quiz.nil?  %>
+  <%= link_to "Take Quiz", new_quiz_path %>
+<% else %>
+  <h3>Here's your score!</h3>
+  <%= @user.quiz.score %>
+  <br>
+  <h3>See your Matches!</h3>
+  <% @user.all_matches.each_with_index do |arr, i| %>
+    <h4><%= "Match #{i+1}" %></h4>
+    <ul>
+      <li><%= link_to arr[0].name, arr[0] %> | <%= link_to arr[1].name, arr[1] %></li>
+    </ul>
+  <% end %>
+<% end %>
