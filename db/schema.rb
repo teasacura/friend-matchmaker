@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_205253) do
+ActiveRecord::Schema.define(version: 2018_09_12_163059) do
 
   create_table "matches", force: :cascade do |t|
-    t.datetime "date"
-    t.string "place"
     t.integer "matcher_id"
     t.integer "matchee_id"
+    t.integer "compatibility"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "score"
+    t.integer "q1"
+    t.integer "q2"
+    t.integer "q3"
+    t.integer "q4"
+    t.integer "q5"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

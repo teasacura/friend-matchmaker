@@ -14,4 +14,22 @@ class Match < ApplicationRecord
     end
   end
 
+  def compatibility
+    total = 0
+    if matcher.quiz.q1 == matchee.quiz.q1
+      total += 1
+    elsif matcher.quiz.q2 == matchee.quiz.q2
+      total += 1
+    elsif matcher.quiz.q3 == matchee.quiz.q3
+      total += 1
+    elsif matcher.quiz.q4 == matchee.quiz.q4
+      total += 1
+    elsif matcher.quiz.q5 == matchee.quiz.q5
+      total += 1
+    else
+      total += 0
+    end
+      total
+  end
+
 end
