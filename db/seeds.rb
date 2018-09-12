@@ -10,9 +10,9 @@ User.destroy_all
 Match.destroy_all
 
 
-anna = User.create(name: "Anna Love", email: "anna@test.com", password: "12345")
-bob = User.create(name: "Robert Porter", email: "bob@test.com", password: "12345")
-alex = User.create(name: "Alex Ham", email: "alex@test.com", password: "12345")
+anna = User.create(name: "Anna Love", email: "anna@test.com", password: "123456")
+bob = User.create(name: "Robert Porter", email: "bob@test.com", password: "123456")
+alex = User.create(name: "Alex Ham", email: "alex@test.com", password: "123456")
 
 match1 = Match.create(date: Date.new, place: "Central Park", matcher: anna, matchee: bob)
 match2 = Match.create(date: Date.new, place: "MET", matcher: anna, matchee: alex)

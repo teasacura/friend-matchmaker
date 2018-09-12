@@ -1,5 +1,12 @@
 class User < ApplicationRecord
+  before_save { self.email = email.downcase }
+  validates :name,  presence: true, length: { maximum: 50 }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
   has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }
 
   # # matcher_matches "names" the Match join table for accessing through the matcher association
   has_many :matcher_matches, foreign_key: :matchee_id, class_name: "Match"

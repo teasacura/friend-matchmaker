@@ -1,5 +1,5 @@
-class UserController < ApplicationController
-  before_action :find_user
+class UsersController < ApplicationController
+  before_action :find_user, only: [:show]
 
   def show
   end
@@ -11,7 +11,7 @@ class UserController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
-      redirect_to @user
+      redirect_to login_path
     else
       render :new
     end
