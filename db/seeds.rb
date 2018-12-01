@@ -18,6 +18,6 @@ quiz1 = Quiz.create(user: anna, score: 60, q1: 1, q2: 2, q3: 1, q4: 1, q5: 1)
 quiz2 = Quiz.create(user: alex, score: 70, q1: 1, q2: 2, q3: 1, q4: 1, q5: 2)
 quiz3 = Quiz.create(user: bob, score: 50, q1: 1, q2: 1, q3: 1, q4: 1, q5: 1)
 
-match1 = Match.create(matcher: anna, matchee: bob, compatibility: 4)
+match1 = Match.create(matcher: anna, matchee: bob)
 match2 = Match.create(matcher: anna, matchee: alex, compatibility: 4)
 match2 = Match.create(matcher: alex, matchee: anna, compatibility: 4)
